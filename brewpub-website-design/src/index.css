@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+:root {
+  --color-black: #1a1a1a;
+  --color-dark: #292524;
+  --color-brown: #92400e;
+  --color-amber: #d97706;
+  --color-cream: #fef3c7;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1a1a1a;
+  color: #fef3c7;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+.nav-link {
+  position: relative;
+  color: #fef3c7cc;
+  transition: color 0.3s ease;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #d97706;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #d97706;
+}
+
+.btn-primary {
+  background-color: #d97706;
+  color: #1a1a1a;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  border: 2px solid #d97706;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #d97706;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #fef3c7;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  border: 2px solid #fef3c7;
+}
+
+.btn-outline:hover {
+  background-color: #fef3c7;
+  color: #1a1a1a;
+}
+
+.section-label {
+  color: #d97706;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: #d97706;
+  margin: 1rem 0;
+}
+
+.divider-center {
+  width: 60px;
+  height: 2px;
+  background: #d97706;
+  margin: 1rem auto;
+}
+
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(26,26,26,0.5) 0%, rgba(26,26,26,0.7) 60%, rgba(26,26,26,1) 100%);
+}
+
+.bg-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(217,119,6,0.15) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.beer-card-flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #d97706;
+  color: #1a1a1a;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+}
+
+.glass-nav {
+  background: rgba(26, 26, 26, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.menu-dropdown {
+  background: #1a1a1a;
+  border: 1px solid rgba(217,119,6,0.3);
+  min-width: 200px;
+}
+
+/* Mega dropdown slide animation */
+@keyframes megaSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mega-open {
+  animation: megaSlideDown 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Logo SVG glow on hover */
+.logo-glow:hover svg path,
+.logo-glow:hover svg rect,
+.logo-glow:hover svg line {
+  filter: drop-shadow(0 0 6px #d97706);
+}
+
+/* Tap counter decorative bars */
+.tap-bar {
+  display: inline-block;
+  width: 2px;
+  height: 32px;
+  background: linear-gradient(to bottom, #d97706, #92400e);
+  border-radius: 1px;
+  margin: 0 6px;
+  opacity: 0.7;
+}
+
+.footer-bg {
+  background: #111111;
+  border-top: 1px solid rgba(217,119,6,0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+input, textarea, select {
+  background: #292524;
+  border: 1px solid rgba(217,119,6,0.3);
+  color: #fef3c7;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #d97706;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(254,243,199,0.4);
+}
